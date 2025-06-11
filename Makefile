@@ -1,4 +1,4 @@
-.PHONY: all render install server clean serve-pdf deploy
+.PHONY: all render install server clean serve-pdf deploy pptx
 
 # Define variables
 # MARP_CLI_VERSION = latest # or a specific version like 2.2.0
@@ -58,3 +58,9 @@ clean:
 	rm -f $(OUTPUT_PDF) $(OUTPUT_HTML) $(OUTPUT_PPTX)
 	rm -rf $(DOCS_DIR)
 	@echo "Clean up complete."
+
+# Render only PowerPoint version
+pptx:
+	@echo "Rendering presentation to PPTX..."
+	marp $(PRESENTATION_FILE) -o $(OUTPUT_PPTX) --allow-local-files
+	@echo "PowerPoint presentation rendered successfully."

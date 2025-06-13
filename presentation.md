@@ -326,3 +326,9 @@ This research is (partly) supported by:
 - INFOBIP Konverzacijski Order Management (IP.1.1.03.0120)
 - Projektiranje i razvoj nove generacije laboratorijskog informacijskog sustava (iLIS) (IP.1.1.03.0158)
 - FIPU project on decentralized business process modeling
+
+---
+
+<!-- _footer: "6th International Conference on Data Analytics & Management (ICDAM-2025)" -->
+
+![](figures/edih.jpg)

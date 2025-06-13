@@ -7,7 +7,7 @@ theme: default
 paginate: true
 style: |
   img {
-    max-width: 60% !important;
+    max-width: 80% !important;
     height: auto !important;
     display: block;
     margin-left: auto;
@@ -125,8 +125,13 @@ style: |
 </div>
 
 ---
+
 <!-- _footer: "6th International Conference on Data Analytics & Management (ICDAM-2025)" -->
-<!-- fragment: false -->
+
+![](figures/edih.jpg)
+
+---
+<!-- _footer: "6th International Conference on Data Analytics & Management (ICDAM-2025)" -->
 
 # INDEX
 
@@ -146,33 +151,31 @@ style: |
 # Introduction to Contextual Multi-Armed Bandits (CMABs)
 
 - **What are CMABs?**
-    - Framework for sequential decision-making under uncertainty 
-    - Agent learns to select actions (arms) based on observed contextual information 
+    - Framework for sequential decision-making under uncertainty where agent learns to select actions (arms) based on observed contextual information 
     - Goal: Maximize cumulative rewards over time 
 
 - **Exploration-Exploitation Dilemma:**
     - Balancing trying new actions to gather information and choosing actions known to yield high rewards 
 
-- **Use Case:** Personalized recommendations
+- **Use Case:** Personalized recommendations in retail offers
 
 - **Motivation for this Paper:**
     - Reviews key aspects of contextual bandits and outlines a prototype system 
-    - Prototype designed to explore approaches for addressing challenges such as interpretability, scalability, and practical deployment, particularly in a retail context 
+    - Prototype designed to explore approaches for addressing challenges such as **interpretability**, **scalability**, and **practical deployment**, particularly in a retail context 
 
 ---
 <!-- _footer: "6th International Conference on Data Analytics & Management (ICDAM-2025)" -->
 
-# Key Challenges & Proposed Approach
+# Challenges & Proposed Approach
 
 - **Challenges in Retail Offer Selection:**
-    - Addressing the challenge of fast-changing offers 
-    - Need for scalable and interpretable solutions 
+    - Addressing the challenge of fast-changing offers over 10M users and 2K categories
 
 - **Proposed Approach Overview:**
-    - Models context at the product category level, allowing offers to span multiple categories 
-    - Enables knowledge transfer across similar offers 
-    - Achieves scalability through efficient feature engineering and modular design 
-    - Utilizes advanced features such as MPG (Member Purchase Gap) and MF (Matrix Factorization) 
+    - Model context at the product category level, allowing offers to span multiple categories 
+    - Enable knowledge transfer across similar offers 
+    - Achieve scalability through efficient feature engineering and modular design 
+    - Utilize existing features such as MPG (Member Purchase Gap) and MF (Matrix Factorization) 
 
 - **Key Contribution: Interpretability at Scale:**
     - Logistic regression models yield transparent weight vectors 
@@ -234,8 +237,8 @@ style: |
 - **Data Preprocessing:** All features are z-score normalized 
 
 - **Learning Process:**
-    - CAMB algorithm first batch-trained on historical data (simulating PySpark) 
-    - Then learns online via SGD 
+    - CAMB algorithm first batch-trained on historical data (PySpark) 
+    - Then learns online via SGD (also PySpark)
 
 ---
 <!-- _footer: "6th International Conference on Data Analytics & Management (ICDAM-2025)" -->
@@ -249,7 +252,7 @@ style: |
 - **AI-Generated Member Profiles (Example from LLM analysis):**
     - **Overall Profile:** "Overall, this is a brand-loyal, non-seasonal member whose clip behavior is timed around replenishment cycles and increasingly influenced by offer size rather than pure discount depth." 
 
-- **Benefit:** Such AI-generated interpretations enable personalized offer optimization.
+- **Benefit:** Such AI-generated interpretations enable personalized offer optimization via gallery headlines and email campaigns.
 
 ---
 <!-- _footer: "6th International Conference on Data Analytics & Management (ICDAM-2025)" -->
@@ -267,7 +270,7 @@ style: |
 
 # Limitations
 
-- **Operational Viability (Production Scale)**
+- **Operational Viability (Production Scale) ongoing**
 
 - **Performance Benchmarking**
 
@@ -305,10 +308,21 @@ style: |
 
 - **Dynamic Field:** The field of contextual bandits is dynamic and rapidly advancing, expanding algorithmic sophistication, theoretical insight, and real-world applicability 
 - **Foundational Algorithms:** LinUCB, Epsilon-Greedy, and Thompson Sampling, with linear and logistic regression models, provide essential underpinnings 
-- **Emphasis on Scalability & Interpretability:** Recent work increasingly emphasizes scalability for millions of users and offers, and interpretability via LLMs for actionable insights 
 - **Our Prototype's Contribution:**
-    - Demonstrates a scalable and interpretable contextual bandit framework 
+    - Demonstrates a scalable and interpretable contextual bandit framework for billions of users category pairs aggregated to offer level
     - Leverages logistic regression with static features in a stationary environment 
     - Crucially, exposes model weights in a form that can be directly interpreted by LLMs for transparent, user-level explanations 
 - **Significance:** Offers a controlled environment for investigating bandit behavior, while also highlighting the potential for interpretable, AI-powered personalization at production scale.
 - **Next Steps:** Substantial empirical and technical refinement is necessary.
+
+---
+<!-- _footer: "6th International Conference on Data Analytics & Management (ICDAM-2025)" -->
+
+# Acknowledgments
+
+This research is (partly) supported by:
+
+- European Digital Innovation Hub Adriatic Croatia (EDIH Adria) (project no. 101083838)
+- INFOBIP Konverzacijski Order Management (IP.1.1.03.0120)
+- Projektiranje i razvoj nove generacije laboratorijskog informacijskog sustava (iLIS) (IP.1.1.03.0158)
+- FIPU project on decentralized business process modeling
